@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.melatech.mykotlinblog"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2_Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxjava2_rxandroid_Version"
+
+    //Lifecycle Components / ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_Version"
+
+    //Gson
+    implementation "com.google.code.gson:gson:$gson_Version"
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_Version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_Version"
+
+
+    //CircleImageView
+    implementation "de.hdodenhof:circleimageview:$circleimageview_Version"
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_Version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_Version"
+
+    //CardView
+    implementation "androidx.cardview:cardview:$cardview_Version"
+
+    //Glide/BumpTech
+    implementation "com.github.bumptech.glide:glide:$bumptech_glide"
+
+    //Dagger Dependency Injection
+    implementation "com.google.dagger:dagger-android:$dagger_Version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_Version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+     kapt "com.google.dagger:dagger-android-processor:$dagger_Version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_Version"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_Version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_Version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_Version"
+
+    //Volley
+    implementation "com.android.volley:volley:$volley_Version"
+
+    //Material Design
+    implementation "com.google.android.material:material:$material_Version"
+
+    //vector
+    implementation "androidx.vectordrawable:vectordrawable:$vectordrawable_Version"
+    implementation "androidx.vectordrawable:vectordrawable-animated:$vectordrawable_animated"
+
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+}
